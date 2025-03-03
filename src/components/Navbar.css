@@ -1,64 +1,83 @@
-/* Overall Navbar Container */
 .navbar {
-    background-color: #e0e0e0; /* Light gray background to match screenshot */
-    padding: 8px 16px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  /* Left Section: Home Button + Text */
-  .navbar-left {
-    display: flex;
-    align-items: center;
-  }
-  
-  .home-button {
-    background-color: #000;    /* Black background */
-    color: #fff;               /* White text */
-    border: none;
-    padding: 6px 12px;
-    margin-right: 10px;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 14px;
-  }
-  
-  .home-button:hover {
-    background-color: #333;    /* Slightly lighter black on hover */
-  }
-  
-  .navbar-text {
-    font-size: 16px;
-    color: #333;
-  }
-  
-  /* Right Section: Avatar + User Info */
-  .navbar-right {
-    display: flex;
-    align-items: center;
-  }
-  
-  .user-avatar {
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    margin-right: 8px;
-  }
-  
-  .user-info {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-  }
-  
-  .username {
-    font-weight: bold;
-    font-size: 14px;
-  }
-  
-  .description {
-    font-size: 12px;
-    color: #666;
-  }
-  
+  background-color: #e0e0e0; /* Light gray background */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  border-bottom: 1px solid #000; /* Thin black border at the bottom */
+}
+
+/* LEFT: Nav Menu */
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  gap: 2rem; /* Space between links */
+  margin: 0;
+  padding: 0;
+}
+
+.navbar-menu li {
+  position: relative;
+}
+
+.navbar-menu li a {
+  text-decoration: none;
+  color: #000;
+  font-weight: 500;
+  padding: 0.5rem;
+  transition: all 0.3s ease;
+}
+
+/* Highlight active link with a purple outline */
+.navbar-menu li.active a {
+  outline: 2px solid purple;
+  outline-offset: -2px;
+}
+
+/* RIGHT: User Info & Logout */
+.navbar-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.user-profile {
+  display: flex;
+  align-items: center;
+}
+
+.user-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+.user-info {
+  display: flex;
+  flex-direction: column;
+  margin-left: 0.5rem;
+}
+
+.username {
+  font-weight: bold;
+  font-size: 14px;
+  color: #000;
+}
+
+.user-role {
+  font-size: 12px;
+  color: #777;
+}
+
+.logout-button {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  color: #000;
+  transition: color 0.3s ease;
+}
+
+.logout-button:hover {
+  color: #666;
+}
