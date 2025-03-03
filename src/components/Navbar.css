@@ -1,0 +1,64 @@
+/* Overall Navbar Container */
+.navbar {
+    background-color: #e0e0e0; /* Light gray background to match screenshot */
+    padding: 8px 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  /* Left Section: Home Button + Text */
+  .navbar-left {
+    display: flex;
+    align-items: center;
+  }
+  
+  .home-button {
+    background-color: #000;    /* Black background */
+    color: #fff;               /* White text */
+    border: none;
+    padding: 6px 12px;
+    margin-right: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+  }
+  
+  .home-button:hover {
+    background-color: #333;    /* Slightly lighter black on hover */
+  }
+  
+  .navbar-text {
+    font-size: 16px;
+    color: #333;
+  }
+  
+  /* Right Section: Avatar + User Info */
+  .navbar-right {
+    display: flex;
+    align-items: center;
+  }
+  
+  .user-avatar {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 8px;
+  }
+  
+  .user-info {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .username {
+    font-weight: bold;
+    font-size: 14px;
+  }
+  
+  .description {
+    font-size: 12px;
+    color: #666;
+  }
+  
