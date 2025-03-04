@@ -1,18 +1,16 @@
-// src/pages/Home.js
-import React, { useState, useEffect } from 'react';
-import API from '../services/api';
-import EventCard from '../components/EventCard';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect, useState } from 'react';
+import API from '../services/api'; // or your event service
+import './Home.css';
 
 const Home = () => {
   const [events, setEvents] = useState([]);
-  const navigate = useNavigate();
 
   useEffect(() => {
+    // Example: Fetch events from your backend
     const fetchEvents = async () => {
       try {
-        const res = await API.get('/events');
-        setEvents(res.data);
+        const response = await API.get('/events'); // Adjust endpoint as needed
+        setEvents(response.data);
       } catch (err) {
         console.error('Failed to fetch events', err);
       }
@@ -21,15 +19,28 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
-      <h1>Local Music Events</h1>
-      {events.map((event) => (
-        <EventCard
-          key={event._id}
-          event={event}
-          onClick={() => navigate(`/events/${event._id}`)}
-        />
-      ))}
+    <div className="home-container">
+      <div className="event-grid">
+        {events.map((event) => (
+          <div className="event-card" key={event._id}>
+            <div className="image-placeholder">
+              {/* Replace this with a real image if your event has one */}
+              <img 
+                src="https://via.placeholder.com/150/EEE/CCC?text=Image"
+                alt="Event placeholder"
+              />
+            </div>
+            <div className="card-content">
+              <h3>{event.name}</h3>
+              <p className="price">${event.ticket_price || 0}</p>
+              <p className="datetime">
+                {new Date(event.date_time).toLocaleString()}
+              </p>
+              <button className="rsvp-button">RSVP</button>
+            </div>
+          </div>
+        ))}
+      </div>
     </div>
   );
 };
